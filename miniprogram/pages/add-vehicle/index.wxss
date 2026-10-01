@@ -1,0 +1,86 @@
+.page {
+  min-height: 100vh;
+  background: #F5F5F5;
+  padding-bottom: 140rpx;
+}
+.form-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+.section-title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.picker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.picker-value {
+  font-size: 30rpx;
+  color: #333;
+}
+.picker-arrow {
+  font-size: 36rpx;
+  color: #ccc;
+}
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.toggle-label {
+  font-size: 28rpx;
+  color: #666;
+}
+.toggle {
+  width: 100rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  background: #e0e0e0;
+  position: relative;
+  transition: background 0.3s;
+}
+.toggle.active {
+  background: #1E7EF0;
+}
+.toggle-dot {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 4rpx;
+  left: 4rpx;
+  transition: left 0.3s;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.15);
+}
+.toggle.active .toggle-dot {
+  left: 48rpx;
+}
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -4rpx 12rpx rgba(0,0,0,0.05);
+}
+.submit-btn {
+  background: linear-gradient(135deg, #1E7EF0, #1565D8);
+  color: #fff;
+  font-size: 32rpx;
+  padding: 24rpx;
+  border-radius: 44rpx;
+  border: none;
+}
+.submit-btn.disabled {
+  background: #ccc;
+}

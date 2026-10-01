@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-title">团队拼团</view>
+    <view class="hero-subtitle">邀请好友组队，一起享受停车优惠</view>
+  </view>
+
+  <view class="team-section">
+    <view class="team-title">我的队伍</view>
+    <view wx:if="{{!team}}" class="team-empty">
+      <view class="empty-icon">👥</view>
+      <view class="empty-text">您还没有加入或创建队伍</view>
+      <view class="team-actions">
+        <button class="btn-primary" bindtap="goToCreate">创建队伍</button>
+        <button class="btn-secondary" bindtap="goToJoin">加入队伍</button>
+      </view>
+    </view>
+    <view wx:else class="team-info">
+      <view class="team-row">
+        <text class="team-label">队伍ID</text>
+        <text class="team-value">{{team.teamId}}</text>
+      </view>
+      <view class="team-row">
+        <text class="team-label">当前人数</text>
+        <text class="team-value">{{team.currentMembers}}/{{team.totalMembers}}</text>
+      </view>
+      <view class="team-row">
+        <text class="team-label">队长</text>
+        <text class="team-value">{{team.leaderName}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="history-section">
+    <view class="section-title">组队历史</view>
+    <view wx:if="{{history.length === 0}}" class="empty-tip">
+      <view class="empty-text">暂无组队历史</view>
+    </view>
+    <view wx:else class="history-list">
+      <view class="history-item" wx:for="{{history}}" wx:key="id">
+        <view class="history-left">
+          <view class="history-team">{{item.teamName}}</view>
+          <view class="history-date">{{item.createdAt}}</view>
+        </view>
+        <view class="history-right">
+          <view class="status-tag {{item.claimed ? 'claimed' : 'unclaimed'}}">
+            {{item.claimed ? '已领取' : '未领取'}}
+          </view>
+          <view class="history-amount" wx:if="{{item.claimed}}">¥{{item.rewardAmount}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

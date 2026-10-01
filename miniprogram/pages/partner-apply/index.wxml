@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="tip-section">
+    <view class="tip-icon">💡</view>
+    <view class="tip-content">
+      <view class="tip-title">停车场合作申请</view>
+      <view class="tip-desc">请如实填写以下信息，不清楚的内容可以留空</view>
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">联系人信息</view>
+    <view class="form-row">
+      <text class="label">姓名</text>
+      <input class="input" placeholder="选填" value="{{form.contactName}}" data-field="contactName" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label required">电话</text>
+      <input class="input" placeholder="必填" type="number" value="{{form.contactPhone}}" data-field="contactPhone" bindinput="onInput" />
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">驻场管理员</view>
+    <view class="form-row">
+      <text class="label">姓名</text>
+      <input class="input" placeholder="选填" value="{{form.adminName}}" data-field="adminName" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">电话</text>
+      <input class="input" placeholder="选填" type="number" value="{{form.adminPhone}}" data-field="adminPhone" bindinput="onInput" />
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">停车场信息</view>
+    <view class="form-row textarea-row">
+      <textarea class="textarea" placeholder="请简要描述停车场情况（选填）" value="{{form.parkingInfo}}" data-field="parkingInfo" bindinput="onInput" maxlength="500"></textarea>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="submit-btn" bindtap="submit">提交申请</button>
+  </view>
+</view>

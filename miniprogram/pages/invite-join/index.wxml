@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="hero-section">
+    <view class="hero-title">加入队伍</view>
+    <view class="hero-subtitle">输入队伍ID，加入好友队伍</view>
+  </view>
+
+  <view class="input-section">
+    <view class="section-title">队伍ID</view>
+    <input class="team-input" placeholder="请输入6位队伍ID" value="{{teamId}}" bindinput="inputTeamId" maxlength="10" />
+    <view class="input-tip">队伍ID由队长分享给您</view>
+    <button class="join-btn {{teamId ? '' : 'disabled'}} {{joining ? 'disabled' : ''}}" bindtap="joinTeam">
+      {{joining ? '加入中...' : '确认加入'}}
+    </button>
+  </view>
+
+  <view class="history-section">
+    <view class="section-title">组队历史</view>
+    <view wx:if="{{history.length === 0}}" class="empty-tip">
+      <view class="empty-icon">📋</view>
+      <view class="empty-text">暂无组队历史</view>
+    </view>
+    <view wx:else class="history-list">
+      <view class="history-item" wx:for="{{history}}" wx:key="id">
+        <view class="history-left">
+          <view class="history-team">{{item.teamName}}</view>
+          <view class="history-date">{{item.createdAt}}</view>
+        </view>
+        <view class="history-right">
+          <view class="status-tag {{item.claimed ? 'claimed' : 'unclaimed'}}">
+            {{item.claimed ? '已领取' : '未领取'}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,132 @@
+.page {
+  min-height: 100vh;
+  background: #F5F5F5;
+  padding-bottom: 140rpx;
+}
+.amount-section {
+  background: #fff;
+  padding: 40rpx 30rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.amount-label {
+  font-size: 28rpx;
+  color: #666;
+}
+.amount-value {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #1E7EF0;
+  margin-top: 10rpx;
+}
+.product-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+.product-name {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+}
+.product-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 6rpx;
+}
+.info-section, .detail-section, .payment-section {
+  background: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+.info-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16rpx 0;
+  font-size: 28rpx;
+}
+.info-label {
+  color: #666;
+}
+.info-value {
+  color: #333;
+}
+.info-value.discount {
+  color: #FF8C00;
+}
+.payment-row {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.payment-row.active {
+  background: #E8F1FF;
+  border-radius: 8rpx;
+  padding: 20rpx 10rpx;
+}
+.payment-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+.payment-name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+.payment-check {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  border: 2rpx solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: #fff;
+}
+.payment-check.checked {
+  background: #1E7EF0;
+  border-color: #1E7EF0;
+}
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -4rpx 12rpx rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pay-info {
+  display: flex;
+  align-items: baseline;
+}
+.pay-label {
+  font-size: 28rpx;
+  color: #333;
+}
+.pay-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1E7EF0;
+}
+.pay-btn {
+  background: linear-gradient(135deg, #1E7EF0, #1565D8);
+  color: #fff;
+  font-size: 32rpx;
+  padding: 20rpx 60rpx;
+  border-radius: 40rpx;
+  border: none;
+}

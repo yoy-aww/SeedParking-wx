@@ -1,0 +1,30 @@
+<view class="page">
+  <view wx:if="{{!isLogin}}" class="empty-tip">
+    <view class="empty-icon">🚗</view>
+    <view class="empty-text">登录后查看车辆信息</view>
+    <button class="login-btn" bindtap="goToAdd">去登录</button>
+  </view>
+  <block wx:else>
+    <view wx:if="{{vehicles.length === 0}}" class="empty-tip">
+      <view class="empty-icon">🚗</view>
+      <view class="empty-text">暂无车辆信息</view>
+      <button class="add-btn-outline" bindtap="goToAdd">添加车辆</button>
+    </view>
+    <view wx:else class="vehicle-list">
+      <view class="vehicle-card" wx:for="{{vehicles}}" wx:key="id">
+        <view class="plate-area">
+          <view class="plate {{item.province === '京' ? 'plate-beijing' : ''}}">{{item.province}}{{item.plate}}</view>
+          <view class="default-tag" wx:if="{{item.isDefault}}">默认</view>
+        </view>
+        <view class="actions">
+          <view class="action-btn" wx:if="{{!item.isDefault}}" bindtap="setDefault" data-id="{{item.id}}">设为默认</view>
+          <view class="icon-btn edit-icon" bindtap="goToEdit" data-id="{{item.id}}">✏️</view>
+          <view class="icon-btn delete-icon" bindtap="onDelete" data-id="{{item.id}}" data-plate="{{item.plate}}">🗑️</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="bottom-bar">
+    <button class="add-btn" bindtap="goToAdd">+ 添加车辆</button>
+  </view>
+</view>

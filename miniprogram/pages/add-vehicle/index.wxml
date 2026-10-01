@@ -1,0 +1,30 @@
+<view class="page">
+  <view class="form-section">
+    <view class="section-title">省份</view>
+    <picker mode="selector" range="{{['京·','津·','沪·','渝·','冀·','晋·','辽·','吉·','黑·','苏·','浙·','皖·','闽·','赣·','鲁·','豫·','鄂·','湘·','粤·','桂·','琼·','川·','贵·','云·','陕·','甘·','青·','蒙·','新·','宁·','藏·']}}" bindchange="selectProvince">
+      <view class="picker-row">
+        <text class="picker-value">{{province || '请选择省份'}}</text>
+        <text class="picker-arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">车牌号码</view>
+    <car-plate value="{{plate}}" bind:change="onPlateChange" />
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">设为默认车辆</view>
+    <view class="toggle-row" bindtap="toggleDefault">
+      <view class="toggle-label">下次预约自动使用此车牌</view>
+      <view class="toggle {{isDefault ? 'active' : ''}}">
+        <view class="toggle-dot"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="submit-btn {{canSubmit ? '' : 'disabled'}}" bindtap="submit">确认添加</button>
+  </view>
+</view>

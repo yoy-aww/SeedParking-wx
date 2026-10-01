@@ -1,0 +1,53 @@
+<view class="page">
+  <view class="vip-header">
+    <view class="vip-crown">👑</view>
+    <view class="vip-title">种子停车会员卡</view>
+    <view class="vip-subtitle">尊享专属特权</view>
+    <view class="vip-rights">
+      <view class="right-item">⚡ 快速停车</view>
+      <view class="right-item">💰 省钱无忧</view>
+      <view class="right-item">🎁 专属优惠</view>
+      <view class="right-item">🚀 优先服务</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">选择优惠卡</view>
+    <view class="card-list">
+      <view wx:for="{{cards}}" wx:key="id"
+        class="vip-card {{selectedCard === item.id ? 'selected' : ''}}"
+        data-id="{{item.id}}" bindtap="selectCard">
+        <view class="card-left">
+          <view class="card-name">{{item.name}}</view>
+          <view class="card-uses">{{item.uses}}次</view>
+        </view>
+        <view class="card-right">
+          <view class="card-price">¥{{item.price}}</view>
+          <view class="card-savings">{{item.savings}}</view>
+        </view>
+        <view class="card-check {{selectedCard === item.id ? 'checked' : ''}}">
+          {{selectedCard === item.id ? '✓' : ''}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">使用说明</view>
+    <view class="card-desc">
+      <view class="desc-item">1. 开通后次数立即到账</view>
+      <view class="desc-item">2. 不限停车场，全国通用</view>
+      <view class="desc-item">3. 有效期12个月</view>
+      <view class="desc-item">4. 每次停车自动抵扣1次</view>
+      <view class="desc-item">5. 支持随时续费，不浪费已购次数</view>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <view class="price-info">
+      <text class="price-label">合计：</text>
+      <text class="price-value">¥{{selectedCard ? cards[0].price : '0'}}</text>
+    </view>
+    <button class="checkout-btn" bindtap="goToCheckout">立即开通</button>
+  </view>
+</view>

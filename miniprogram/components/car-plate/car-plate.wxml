@@ -1,0 +1,17 @@
+<view class="plate-container">
+  <view class="plate-label">车牌信息</view>
+  <view class="plate-inputs">
+    <view class="plate-cell {{focusedIndex===0?'focused':''}} {{chars[0]?'filled':''}}" wx:if="{{showProvince===false}}" data-idx="0" bind:tap="onCharTap">{{chars[0]||'选择'}}</view>
+    <view class="plate-cell {{focusedIndex===i?'focused':''}} {{chars[i]?'filled':''}}" wx:for="{{chars}}" wx:for-index="i" wx:if="{{i>0}}" data-idx="{{i}}" bind:tap="onCharTap">{{chars[i]}}</view>
+  </view>
+  <view class="plate-preview" wx:if="{{chars.join('')}}">
+    <text class="plate-preview-text">{{chars.join('')}}</text>
+  </view>
+  <view class="plate-hint">第8位为新能源专用位</view>
+  <input wx:if="{{focusedIndex>0}}" class="hidden-input" type="text" maxlength="1" value="{{chars[focusedIndex]}}" bindinput="onKeyInput" focus="{{focusedIndex>0}}" />
+  <view wx:if="{{showProvince}}" class="province-mask" bind:tap="hideProvince">
+    <picker mode="selector" range="{{provinces}}" bind:change="onProvinceSelect">
+      <view class="province-box">选择省份</view>
+    </picker>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab===index?'active':''}}" wx:for="{{tabs}}" wx:key="id" data-id="{{item.id}}" bind:tap="switchTab">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="filter-bar">
+    <view class="filter-item" wx:for="{{filters}}" wx:key="id" data-id="{{item.id}}" bind:tap="applyFilter">
+      {{item.name}}
+      <text class="filter-arrow">∨</text>
+    </view>
+  </view>
+  <view class="lot-list" wx:if="{{lots.length > 0}}">
+    <view class="lot-card" wx:for="{{lots}}" wx:key="id">
+      <view class="lot-image">
+        <text class="lot-image-text">🚗</text>
+        <view class="lot-tag-green" wx:if="{{item.service==='free'}}">24h免费接送</view>
+        <view class="lot-tag-green" wx:if="{{item.service==='walk'}}">步行直达</view>
+      </view>
+      <view class="lot-info">
+        <text class="lot-name">{{item.name}}</text>
+        <view class="lot-meta">
+          <text class="lot-distance">{{item.location}}</text>
+          <text class="lot-transfer" wx:if="{{item.transferTime}}">接送{{item.transferTime}}分钟</text>
+        </view>
+        <view class="lot-tags">
+          <text class="lot-tag" wx:for="{{item.facilities}}" wx:key="*this">{{item}}</text>
+        </view>
+      </view>
+      <view class="lot-action">
+        <text class="lot-price">¥{{item.price}}</text>
+        <text class="lot-unit">起</text>
+        <view class="lot-btn" data-id="{{item.id}}" bind:tap="goToBooking">预订</view>
+      </view>
+    </view>
+  </view>
+  <empty-state wx:if="{{empty}}" title="暂无停车场" desc="当前城市暂未开通该类型停车服务" buttonText="切换城市" showButton="{{true}}" />
+</view>

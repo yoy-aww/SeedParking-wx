@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="rules-header">
+    <text class="rules-title">活动规则</text>
+    <text class="rules-desc">活动时间：2026年1月1日 - 2026年12月31日</text>
+  </view>
+  <view class="rules-list">
+    <view class="rule-card" wx:for="{{rules}}" wx:key="title">
+      <view class="rule-icon" style="background:{{item.color}}20">{{item.icon}}</view>
+      <view class="rule-content">
+        <text class="rule-title">{{item.title}}</text>
+        <text class="rule-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="rules-footer">
+    <text class="footer-text">* 最终解释权归种子停车所有</text>
+  </view>
+</view>

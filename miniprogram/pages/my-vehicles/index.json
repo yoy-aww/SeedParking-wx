@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "car-plate": "/components/car-plate/car-plate"
+  },
+  "navigationBarTitleText": "车辆信息"
+}

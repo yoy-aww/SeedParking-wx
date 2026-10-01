@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="form-section">
+    <view class="section-title">距离目的地</view>
+    <view class="form-row">
+      <text class="label">公里数</text>
+      <input class="input" placeholder="请输入公里数" type="digit" value="{{form.distanceKm}}" data-field="distanceKm" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">分钟数</text>
+      <input class="input" placeholder="请输入分钟数" type="number" value="{{form.distanceMin}}" data-field="distanceMin" bindinput="onInput" />
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">驻停车设施</view>
+    <view class="form-row textarea-row">
+      <textarea class="textarea" placeholder="请描述停车场的设施情况（如监控、照明、道闸等）" value="{{form.facility}}" data-field="facility" bindinput="onInput" maxlength="500"></textarea>
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">其他备注</view>
+    <view class="form-row textarea-row">
+      <textarea class="textarea" placeholder="其他需要说明的信息（选填）" value="{{form.remark}}" data-field="remark" bindinput="onInput" maxlength="500"></textarea>
+    </view>
+  </view>
+
+  <view class="photo-section">
+    <view class="photo-title">📸 照片指引</view>
+    <view class="photo-desc">请通过微信发送5-10张停车场现场照片给我们</view>
+    <view class="photo-hint">包含停车场入口、车位、周边道路等</view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="submit-btn" bindtap="submit">提交申请</button>
+  </view>
+</view>

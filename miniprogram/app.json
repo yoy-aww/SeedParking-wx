@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/list/index",
+    "pages/order/index",
+    "pages/login/index",
+    "pages/my/index",
+    "pages/my-vehicles/index",
+    "pages/add-vehicle/index",
+    "pages/my-coupons/index",
+    "pages/my-cards/index",
+    "pages/card-checkout/index",
+    "pages/pay/index",
+    "pages/invite/index",
+    "pages/invite-create/index",
+    "pages/invite-join/index",
+    "pages/partner-apply/index",
+    "pages/partner-info/index",
+    "pages/partner-detail/index",
+    "pages/faq/index",
+    "pages/privacy-policy/index",
+    "pages/activity-rules/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1E7EF0",
+    "navigationBarTitleText": "种子停车",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F5F5F5"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1E7EF0",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {"pagePath": "pages/home/index", "text": "首页", "iconPath": "images/tab-home.png", "selectedIconPath": "images/tab-home-active.png"},
+      {"pagePath": "pages/order/index", "text": "订单", "iconPath": "images/tab-order.png", "selectedIconPath": "images/tab-order-active.png"},
+      {"pagePath": "pages/my/index", "text": "我的", "iconPath": "images/tab-my.png", "selectedIconPath": "images/tab-my-active.png"}
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
+}

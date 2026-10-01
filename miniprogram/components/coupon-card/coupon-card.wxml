@@ -1,0 +1,17 @@
+<view class="coupon-card">
+  <view class="coupon-left">
+    <view class="coupon-count" wx:if="{{count > 1}}">x{{count}}</view>
+    <view class="coupon-amount">¥{{amount}}</view>
+    <view class="coupon-condition">{{condition || '无门槛'}}</view>
+  </view>
+  <view class="coupon-right">
+    <view class="coupon-header">
+      <text class="coupon-name">优惠券</text>
+      <text class="coupon-tag">{{type}}</text>
+    </view>
+    <view class="coupon-desc">无门槛立减{{amount}}元</view>
+    <view class="coupon-scope">适用于全部停车场</view>
+    <view class="coupon-expire">有效期至 {{expireDate}}</view>
+    <view class="coupon-btn" bind:tap="onUse">去使用</view>
+  </view>
+</view>

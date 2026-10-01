@@ -1,0 +1,32 @@
+
+.plate-container { padding: 24rpx; background: #fff; }
+.plate-preview {
+  border: 3rpx solid #1E7EF0;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #1E7EF0;
+  margin-bottom: 24rpx;
+  background: #f8f9fa;
+}
+.plate-label { font-size: 28rpx; color: #333; font-weight: bold; margin-bottom: 16rpx; }
+.plate-inputs { display: flex; gap: 8rpx; margin-bottom: 12rpx; }
+.plate-cell {
+  width: 72rpx; height: 88rpx;
+  border: 2rpx solid #ddd;
+  border-radius: 8rpx;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36rpx; font-weight: bold; color: #333;
+  background: #f8f9fa;
+}
+.plate-cell.focused { border-color: #1E7EF0; background: #fff; }
+.plate-cell.filled { background: #f0f7ff; }
+.plate-hint { font-size: 22rpx; color: #999; }
+.plate-preview { margin-top: 12rpx; }
+.plate-preview-text { font-size: 40rpx; font-weight: bold; color: #1E7EF0; letter-spacing: 8rpx; }
+.hidden-input { position: absolute; left: -9999rpx; top: -9999rpx; opacity: 0; width: 1rpx; height: 1rpx; }
+.province-mask { position: fixed; left: 0; top: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 999; display: flex; align-items: flex-end; }
+.province-box { width: 100%; background: #fff; padding: 24rpx; text-align: center; color: #1E7EF0; font-size: 32rpx; border-radius: 24rpx 24rpx 0 0; }
+.province-picker { font-size: 28rpx; color: #1E7EF0; padding: 20rpx 0; }

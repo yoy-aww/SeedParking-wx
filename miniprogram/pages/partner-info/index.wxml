@@ -1,0 +1,47 @@
+<view class="page">
+  <view class="form-section">
+    <view class="section-title">停车场信息</view>
+    <view class="form-row">
+      <text class="label required">停车场名称</text>
+      <input class="input" placeholder="请输入停车场名称" value="{{form.name}}" data-field="name" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label required">停车场地址</text>
+      <input class="input" placeholder="请输入详细地址" value="{{form.address}}" data-field="address" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">车位数量</text>
+      <input class="input" placeholder="请输入车位数量" type="number" value="{{form.capacity}}" data-field="capacity" bindinput="onInput" />
+    </view>
+    <view class="form-row">
+      <text class="label">平台批发价</text>
+      <input class="input" placeholder="请输入批发价格（元/次）" type="digit" value="{{form.wholesalePrice}}" data-field="wholesalePrice" bindinput="onInput" />
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">运营情况</view>
+    <view class="form-row">
+      <text class="label">营业时间</text>
+      <picker mode="multiSelector" bindchange="selectTime">
+        <view class="picker-value">{{form.businessHours || '请选择营业时间'}}</view>
+      </picker>
+    </view>
+    <view class="form-row">
+      <text class="label">目的地类型</text>
+      <picker mode="selector" range="{{destTypes}}" bindchange="selectType">
+        <view class="picker-value">{{form.destType || '请选择目的地类型'}}</view>
+      </picker>
+    </view>
+    <view class="form-row">
+      <text class="label">目的地接送</text>
+      <picker mode="selector" range="{{destTransferOptions}}" bindchange="selectTransfer">
+        <view class="picker-value">{{form.destTransfer || '请选择接送方式'}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="bottom-bar">
+    <button class="submit-btn" bindtap="submit">下一步</button>
+  </view>
+</view>

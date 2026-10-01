@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="header">
+    <view class="header-inner">
+      <view class="city-bar" bind:tap="switchCity">
+        <text class="city-icon">📍</text>
+        <text class="city-text">{{city}}</text>
+        <text class="city-arrow">▾</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="category-section">
+    <view class="category-list">
+      <view class="category-item" wx:for="{{categories}}" wx:key="id" data-id="{{item.id}}" bind:tap="goToCategory">
+        <view class="category-icon-wrap" style="background:{{item.color}}15">
+          <text class="category-icon">{{item.icon}}</text>
+        </view>
+        <text class="category-name">{{item.name}}停车</text>
+        <text class="category-desc">便捷出行</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="banner-section">
+    <view class="banner-card" style="background:linear-gradient(135deg,{{banners[0].bgColor}},{{banners[0].bgColor}}CC)">
+      <view class="banner-content">
+        <text class="banner-title">{{banners[0].title}}</text>
+        <view class="banner-tag">限时专享</view>
+        <text class="banner-subtitle">最高可领{{30}}元停车优惠券</text>
+      </view>
+      <view class="banner-emoji">🎁</view>
+    </view>
+  </view>
+
+  <view class="recommend-section">
+    <view class="section-header">
+      <text class="section-title">为你推荐</text>
+      <text class="section-more" bind:tap="goToList">更多推荐 ›</text>
+    </view>
+    <view class="lot-list" wx:if="{{recommendations.length > 0}}">
+      <view class="lot-card" wx:for="{{recommendations}}" wx:key="id">
+        <view class="lot-image">
+          <text class="lot-image-text">🚗</text>
+          <view class="lot-tag-green" wx:if="{{item.service==='free' }}">24h免费接送</view>
+        </view>
+        <view class="lot-info">
+          <text class="lot-name">{{item.name}}</text>
+          <view class="lot-meta">
+            <text class="lot-distance">{{item.distance}}</text>
+            <text class="lot-transfer" wx:if="{{item.transferTime}}">接送{{item.transferTime}}分钟</text>
+          </view>
+          <view class="lot-tags">
+            <text class="lot-tag" wx:for="{{item.facilities}}" wx:key="*this">{{item}}</text>
+          </view>
+        </view>
+        <view class="lot-action">
+          <text class="lot-price">¥{{item.price}}</text>
+          <text class="lot-unit">起</text>
+          <view class="lot-btn" bind:tap="goToList">预订</view>
+        </view>
+      </view>
+    </view>
+    <view class="loading" wx:if="{{loading}}">加载中...</view>
+  </view>
+</view>

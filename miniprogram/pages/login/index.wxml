@@ -1,0 +1,51 @@
+<view class="page">
+  <view class="brand-area">
+    <view class="brand-logo">🚗</view>
+    <text class="brand-name">种子停车</text>
+    <text class="brand-slogan">智慧出行·轻松停泊</text>
+  </view>
+
+  <view class="welcome-card">
+    <text class="welcome-title">欢迎使用种子停车</text>
+    <text class="welcome-desc">登录后即可预约车位、领取优惠券、管理车辆</text>
+    <view class="feature-list">
+      <view class="feature-item">
+        <text class="feature-icon" style="background:#FF8C00">¥</text>
+        <text class="feature-name">停车优惠</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-icon" style="background:#1E7EF0">⏱</text>
+        <text class="feature-name">智能预约</text>
+      </view>
+      <view class="feature-item">
+        <text class="feature-icon" style="background:#FFD700">💳</text>
+        <text class="feature-name">无感支付</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-area">
+    <view class="form-row">
+      <text class="form-prefix">+86</text>
+      <input class="form-input" type="number" placeholder="请输入手机号" value="{{phone}}" bindinput="inputPhone" maxlength="11" />
+    </view>
+    <view class="form-row">
+      <input class="form-input" type="number" placeholder="请输入验证码" value="{{code}}" bindinput="inputCode" maxlength="6" />
+      <view class="code-btn {{sending?'disabled':''}}" bind:tap="getCode">
+        {{sending?countdown+'s后重试':'获取验证码'}}
+      </view>
+    </view>
+    <view class="submit-btn {{canSubmit?'':'disabled'}}" bind:tap="submitLogin">登录</view>
+  </view>
+
+  <view class="agreement-row">
+    <view class="checkbox {{agreed?'checked':''}}" bind:tap="checkAgree">
+      <text wx:if="{{agreed}}">✓</text>
+    </view>
+    <view class="agreement-text">
+      我已阅读并同意<text class="link" bind:tap="goToAgreement">《用户协议》</text>和<text class="link" bind:tap="goToAgreement">《隐私政策》</text>
+    </view>
+  </view>
+
+  <view class="skip-link" bind:tap="skipLogin">暂不登录，先看看</view>
+</view>
